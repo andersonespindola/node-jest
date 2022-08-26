@@ -6,13 +6,13 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=dev nodemon src/index.ts",
-    "test": "NODE_ENV=test jest --runInBand",
+    "test": "NODE_ENV=test jest",
     "start": "yarn build && nodemon dist",
     "build": "tsc --build",
     "test:unit": "NODE_ENV=test jest unit --verbose",
-    "test:path": "NODE_ENV=test jest --runInBand --verbose",
-    "test:coverage": "NODE_ENV=test jest --runInBand --coverage",
-    "test:integration": "NODE_ENV=test jest integration --runInBand --verbose"
+    "test:path": "NODE_ENV=test jest --verbose",
+    "test:coverage": "NODE_ENV=test jest --coverage",
+    "test:integration": "NODE_ENV=test jest integration --verbose"
   },
   "repository": {
     "type": "git",
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
-    "class-transformer": "^0.4.0",
+    "class-transformer": "^0.5.1",
     "class-validator": "^0.13.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -48,8 +48,5 @@
     "ts-lib": "^0.0.5",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.5"
-  },
-  "jest": {
-    "testEnvironment": "node"
   }
 }

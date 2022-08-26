@@ -26,5 +26,5 @@
       "~/*": ["./src/*"]
     }
   },
-  "exclude": ["__tests__"]
+  "exclude": ["node_modules"]
 }

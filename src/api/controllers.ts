@@ -1,3 +1,3 @@
-import { NewHashController } from './newHash/controller'
+import { UserController } from './user/controller'
 
-export default [NewHashController]
+export default [UserController]

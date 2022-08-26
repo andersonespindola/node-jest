@@ -9,12 +9,11 @@
   "testEnvironment": "node",
   "preset": "ts-jest",
   "testMatch": ["**/__tests__/**/*test.ts?(x)"],
-  "modulePathIgnorePatterns": ["<rootDir>/__tests__/helpers"],
   "collectCoverageFrom": [
     "src/**/*.ts",
     "!src/index.ts",
-    "!src/lib/**/*.ts",
-    "!src/config/**/*.ts"
+    "!src/config/**/*.ts",
+    "!src/common/enums.ts"
   ],
   "reporters": [
     "default",

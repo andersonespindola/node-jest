@@ -3,18 +3,18 @@ import { startServer, closeServer, sendRequest } from '../helpers/server'
 
 describe('[E2E] Busca de usuário', () => {
   /**
-   * Connect to a new in-memory database before running any tests.
+   * Start server.
    */
   beforeAll(startServer)
 
   /**
-   * Remove and close the db and server.
+   * Close server.
    */
   afterAll(closeServer)
 
   test('Deve retornar as informações de um usuário', async () => {
     /**
-     * Create hash.
+     * User id.
      */
     const userId = 3
 
@@ -40,7 +40,7 @@ describe('[E2E] Busca de usuário', () => {
 
   test('Deve retornar um erro quando for procurado um usuário inexistente', async () => {
     /**
-     * Create hash.
+     * User id.
      */
     const userId = 9999
 

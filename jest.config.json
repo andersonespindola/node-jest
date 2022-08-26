@@ -13,7 +13,8 @@
     "src/**/*.ts",
     "!src/index.ts",
     "!src/config/**/*.ts",
-    "!src/common/enums.ts"
+    "!src/common/enums.ts",
+    "!src/config-aliases.ts"
   ],
   "reporters": [
     "default",

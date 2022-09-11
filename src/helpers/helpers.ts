@@ -1,4 +1,11 @@
-import { customAlphabet } from 'nanoid'
+const allowedCharacters = 'abcdefghijklmnopqrstuvwxyz0123456789'
 
 export const getRandomHash = () =>
-  customAlphabet('abcdefghijklmnopqrstuvwxyz0987654321', 6)()
+  new Array(6)
+    .fill('')
+    .map(() =>
+      allowedCharacters.charAt(
+        Math.floor(Math.random() * allowedCharacters.length)
+      )
+    )
+    .join('')

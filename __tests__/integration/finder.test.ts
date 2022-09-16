@@ -1,4 +1,5 @@
 import { users } from '~/api/user/services/finder'
+import { phones } from '~/api/user/services/phone'
 import { findUser } from '~/api/user/services/finder'
 
 describe('[INTEGRAÇÃO] Busca de usuário', () => {
@@ -14,9 +15,14 @@ describe('[INTEGRAÇÃO] Busca de usuário', () => {
     const foundUser = findUser(userId)
 
     /**
-     * Get user with id 3.
+     * Get user with id 2.
      */
     const expectedUser = users.find(user => user.id === userId)
+
+    /**
+     * Get user phone.
+     */
+    const expectedPhone = phones.find(phone => phone.idUser === userId)
 
     /**
      * Expect.
@@ -24,7 +30,9 @@ describe('[INTEGRAÇÃO] Busca de usuário', () => {
     expect(foundUser).toMatchObject({
       id: expectedUser?.id,
       name: expectedUser?.name,
-      email: expectedUser?.email
+      email: expectedUser?.email,
+
+      phone: expectedPhone
     })
   })
 

@@ -1,4 +1,5 @@
 import { users } from '~/api/user/services/finder'
+import { phones } from '~/api/user/services/phone'
 import { startServer, closeServer, sendRequest } from '../helpers/server'
 
 describe('[E2E] Busca de usuário', () => {
@@ -29,12 +30,19 @@ describe('[E2E] Busca de usuário', () => {
     const expectedUser = users.find(user => user.id === userId)
 
     /**
+     * Get user phone.
+     */
+    const expectedPhone = phones.find(phone => phone.idUser === userId)
+
+    /**
      * Expect.
      */
     expect(foundUser.body).toMatchObject({
       id: expectedUser?.id,
       name: expectedUser?.name,
-      email: expectedUser?.email
+      email: expectedUser?.email,
+
+      phone: expectedPhone
     })
   })
 

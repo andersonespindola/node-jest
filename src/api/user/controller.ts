@@ -1,6 +1,6 @@
 import { Get, JsonController, Param } from 'routing-controllers'
 
-import { findUser } from './service'
+import { findUser } from './services/finder'
 
 @JsonController()
 export class UserController {

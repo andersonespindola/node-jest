@@ -1,4 +1,5 @@
-import { findUser, users } from '~/api/user/service'
+import { users } from '~/api/user/services/finder'
+import { findUser } from '~/api/user/services/finder'
 
 describe('[INTEGRAÇÃO] Busca de usuário', () => {
   test('Deve retornar as informações do usuário', () => {

@@ -1,3 +1,5 @@
+import { findUserPhone } from './phone'
+
 /**
  * Users list.
  */
@@ -16,5 +18,15 @@ export const findUser = (id: number) => {
    */
   const foundUser = users.find(user => user.id === id)
 
-  return foundUser
+  /**
+   * Not found.
+   */
+  if (!foundUser) return foundUser
+
+  /**
+   * Find user phone.
+   */
+  const foundPhone = findUserPhone(foundUser.id)
+
+  return { ...foundUser, phone: foundPhone }
 }

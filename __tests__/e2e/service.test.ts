@@ -1,4 +1,4 @@
-import { users } from '~/api/user/service'
+import { users } from '~/api/user/services/finder'
 import { startServer, closeServer, sendRequest } from '../helpers/server'
 
 describe('[E2E] Busca de usuário', () => {

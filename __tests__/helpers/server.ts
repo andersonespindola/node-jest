@@ -1,4 +1,3 @@
-import request from 'supertest'
 import { Server } from 'http'
 
 import { server as httpServer } from '~/server'
@@ -24,14 +23,3 @@ export const startServer = async () => {
  * Close server.
  */
 export const closeServer = () => server.close()
-
-/**
- * Send generic request.
- */
-export const sendRequest = (
-  method: 'post' | 'get' | 'delete' | 'put',
-  route: string,
-  data?: Object
-) => {
-  return request(server)[method](route).send(data)
-}

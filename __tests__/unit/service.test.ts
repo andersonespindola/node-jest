@@ -2,7 +2,7 @@ import { getRandomHash } from '~/helpers/helpers'
 
 describe('[UNITÁRIO] Retornar um hash', () => {
   test('Deve ser uma função', () => {
-    expect(typeof getRandomHash).toEqual('function')
+    expect(getRandomHash).toBeInstanceOf(Function)
   })
 
   test('Deve retornar uma string', () => {
@@ -14,6 +14,6 @@ describe('[UNITÁRIO] Retornar um hash', () => {
   test('Deve retornar 6 caracteres', () => {
     const newHash = getRandomHash()
 
-    expect(newHash.length).toEqual(6)
+    expect(newHash).toHaveLength(6)
   })
 })

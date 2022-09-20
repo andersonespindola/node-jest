@@ -1,6 +1,8 @@
+import request from 'supertest'
+
 import { users } from '~/api/user/services/finder'
 import { phones } from '~/api/user/services/phone'
-import { startServer, closeServer, sendRequest } from '../helpers/server'
+import { startServer, closeServer, server } from '../helpers/server'
 
 describe('[E2E] Busca de usuário', () => {
   /**
@@ -22,7 +24,7 @@ describe('[E2E] Busca de usuário', () => {
     /**
      * Request.
      */
-    const foundUser = await sendRequest('get', `/${userId}`)
+    const foundUser = await request(server).get(`/${userId}`)
 
     /**
      * Get user with id 3.
@@ -55,7 +57,7 @@ describe('[E2E] Busca de usuário', () => {
     /**
      * Request.
      */
-    const foundUser = await sendRequest('get', `/${userId}`)
+    const foundUser = await request(server).get(`/${userId}`)
 
     /**
      * Expect.
